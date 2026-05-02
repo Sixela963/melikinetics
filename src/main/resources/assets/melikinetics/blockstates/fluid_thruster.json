@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "melikinetics:block/fluid_thruster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "melikinetics:block/fluid_thruster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "melikinetics:block/fluid_thruster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "melikinetics:block/fluid_thruster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "melikinetics:block/fluid_thruster"
+    },
+    "facing=west": {
+      "model": "melikinetics:block/fluid_thruster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

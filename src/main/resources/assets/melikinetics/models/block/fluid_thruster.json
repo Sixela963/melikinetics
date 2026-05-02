@@ -1,0 +1,38 @@
+{
+    "parent": "block/block",
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "melikinetics:block/fluid_thruster",
+		"particle": "melikinetics:block/fluid_thruster"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 2, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 0, 2]},
+			"faces": {
+				"north": {"uv": [4, 6, 7, 6.5], "texture": "#0"},
+				"east": {"uv": [4, 6.5, 7, 7], "texture": "#0"},
+				"south": {"uv": [7, 0, 10, 0.5], "texture": "#0"},
+				"west": {"uv": [7, 0.5, 10, 1], "texture": "#0"},
+				"up": {"uv": [3, 3, 0, 0], "texture": "#0"},
+				"down": {"uv": [3, 3, 0, 6], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 2, 4],
+			"to": [12, 14, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 2, 4]},
+			"faces": {
+				"north": {"uv": [3, 0, 5, 3], "texture": "#0"},
+				"east": {"uv": [3, 3, 5, 6], "texture": "#0"},
+				"south": {"uv": [5, 0, 7, 3], "texture": "#0"},
+				"west": {"uv": [5, 3, 7, 6], "texture": "#0"},
+				"up": {"uv": [2, 8, 0, 6], "texture": "#0"},
+				"down": {"uv": [4, 6, 2, 8], "texture": "#0"}
+			}
+		}
+	]
+}
