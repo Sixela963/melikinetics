@@ -3,6 +3,8 @@ package com.sixela.melikinetics;
 import com.sixela.melikinetics.blocks.FluidThrusterBlock;
 import com.sixela.melikinetics.blocks.FluidThrusterBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -101,6 +103,7 @@ public class MelikineticsMod {
     public MelikineticsMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerCapabilities);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -148,6 +151,16 @@ public class MelikineticsMod {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    public void registerCapabilities (RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(
+                Capabilities.FluidHandler.BLOCK,
+                FLUID_THRUSTER_BLOCK_ENTITY.get(),
+                (fluidThrusterBlockEntity, side) -> {
+                     return (side != fluidThrusterBlockEntity.getBlockState().getValue(FluidThrusterBlock.FACING)) ? fluidThrusterBlockEntity.fluidHandler: null;
+                }
+        );
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
